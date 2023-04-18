@@ -66,10 +66,10 @@ namespace WF_exel_find_17_04_2023
             progressBar2.Minimum = 0;
             progressBar2.Maximum = list.Count;
             int count = 0;
-            for (int i = 0; i < 1000; i++)
-            {
-                progressBar2.Value = i;
-            }
+            //for (int i = 0; i < 1000; i++)
+            //{
+            //    progressBar2.Value = i;
+            //}
             foreach (string f in list)
             {
 
