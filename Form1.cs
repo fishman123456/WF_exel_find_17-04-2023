@@ -15,7 +15,29 @@ namespace WF_exel_find_17_04_2023
             openFileDialog1.Filter = "Exel files(*.xls)|*.xls|All files(*.*)|*.*";
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        public async void button1_Click(object sender, EventArgs e)
+        {
+            //await Task.Run(() => { PrintAsync(); });
+            PrintAsync();
+        }
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void progressBar2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+       public async  Task PrintAsync()
         {
             List<string> list = new List<string>();
 
@@ -70,29 +92,18 @@ namespace WF_exel_find_17_04_2023
             //{
             //    progressBar2.Value = i;
             //}
+            textBox1.Text = "\n";
             foreach (string f in list)
             {
 
                 textBox1.Text += f;
-                progressBar2.Value = count;
-                count++;
+                progressBar2.Value = list.Count;
+
             }
             //foreach (string f in list)
             //{
             //    dataGridView1.Rows.Add(f.ToArray());
             //}
-        }
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void progressBar2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
         }
     }
 }

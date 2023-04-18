@@ -33,12 +33,14 @@
             progressBar1 = new ProgressBar();
             progressBar2 = new ProgressBar();
             openFileDialog1 = new OpenFileDialog();
+            toolStrip1 = new ToolStrip();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(12, 3);
+            textBox1.Location = new Point(12, 18);
+            textBox1.Margin = new Padding(10);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Vertical;
@@ -82,11 +84,21 @@
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.FileOk += openFileDialog1_FileOk;
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1085, 25);
+            toolStrip1.TabIndex = 5;
+            toolStrip1.Text = "toolStrip1";
+            toolStrip1.ItemClicked += toolStrip1_ItemClicked;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 368);
+            Controls.Add(toolStrip1);
             Controls.Add(progressBar2);
             Controls.Add(progressBar1);
             Controls.Add(ButtLoadFileList);
@@ -104,5 +116,6 @@
         private ProgressBar progressBar1;
         private ProgressBar progressBar2;
         private OpenFileDialog openFileDialog1;
+        private ToolStrip toolStrip1;
     }
 }
