@@ -34,25 +34,25 @@
             progressBar2 = new ProgressBar();
             openFileDialog1 = new OpenFileDialog();
             toolStrip1 = new ToolStrip();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(12, 18);
-            textBox1.Margin = new Padding(10);
+            textBox1.Location = new Point(12, 28);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(1064, 226);
+            textBox1.Size = new Size(689, 202);
             textBox1.TabIndex = 0;
             // 
             // ButtLoadFileList
             // 
             ButtLoadFileList.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ButtLoadFileList.Location = new Point(776, 257);
+            ButtLoadFileList.Location = new Point(751, 257);
             ButtLoadFileList.Name = "ButtLoadFileList";
-            ButtLoadFileList.Size = new Size(300, 30);
+            ButtLoadFileList.Size = new Size(300, 89);
             ButtLoadFileList.TabIndex = 1;
             ButtLoadFileList.Text = "загрузить из файла в список";
             ButtLoadFileList.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             progressBar1.Location = new Point(12, 257);
             progressBar1.Maximum = 1000;
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(700, 30);
+            progressBar1.Size = new Size(689, 30);
             progressBar1.Step = 1;
             progressBar1.TabIndex = 2;
             progressBar1.Click += progressBar1_Click;
@@ -74,7 +74,7 @@
             progressBar2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             progressBar2.Location = new Point(12, 316);
             progressBar2.Name = "progressBar2";
-            progressBar2.Size = new Size(700, 30);
+            progressBar2.Size = new Size(689, 30);
             progressBar2.Step = 1;
             progressBar2.TabIndex = 4;
             progressBar2.Click += progressBar2_Click;
@@ -88,16 +88,28 @@
             // 
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1085, 25);
+            toolStrip1.Size = new Size(1074, 25);
             toolStrip1.TabIndex = 5;
             toolStrip1.Text = "toolStrip1";
             toolStrip1.ItemClicked += toolStrip1_ItemClicked;
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            textBox2.Location = new Point(751, 28);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.ScrollBars = ScrollBars.Vertical;
+            textBox2.Size = new Size(300, 202);
+            textBox2.TabIndex = 6;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1085, 368);
+            ClientSize = new Size(1074, 368);
+            Controls.Add(textBox2);
             Controls.Add(toolStrip1);
             Controls.Add(progressBar2);
             Controls.Add(progressBar1);
@@ -117,5 +129,6 @@
         private ProgressBar progressBar2;
         private OpenFileDialog openFileDialog1;
         private ToolStrip toolStrip1;
+        private TextBox textBox2;
     }
 }

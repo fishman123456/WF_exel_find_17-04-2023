@@ -1,11 +1,13 @@
 using Microsoft.Office.Interop.Excel;
-
+using System.Threading;
 using System.Collections.Generic;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WF_exel_find_17_04_2023
 {
     public partial class Form1 : Form
     {
+        public delegate void MyDelegate(string iText);
         public Form1()
         {
             InitializeComponent();
@@ -13,13 +15,17 @@ namespace WF_exel_find_17_04_2023
             progressBar2.Value = 0;
             progressBar2.Maximum = 1000;
             openFileDialog1.Filter = "Exel files(*.xls)|*.xls|All files(*.*)|*.*";
+
         }
 
-        public async void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //await Task.Run(() => { PrintAsync(); });
-            PrintAsync();
+            //Thread mythread = new Thread(Print);
+            //mythread.Start();
+            Print();
         }
+
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
@@ -37,7 +43,7 @@ namespace WF_exel_find_17_04_2023
         {
 
         }
-       public async  Task PrintAsync()
+        public void Print()
         {
             List<string> list = new List<string>();
 
@@ -86,7 +92,7 @@ namespace WF_exel_find_17_04_2023
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             MessageBox.Show("Закончили");
             progressBar2.Minimum = 0;
-            progressBar2.Maximum = list.Count;
+            progressBar2.Maximum = list.Count-1;
             int count = 0;
             //for (int i = 0; i < 1000; i++)
             //{
@@ -97,13 +103,18 @@ namespace WF_exel_find_17_04_2023
             {
 
                 textBox1.Text += f;
-                progressBar2.Value = list.Count;
+                progressBar2.Value = count++;
 
             }
             //foreach (string f in list)
             //{
             //    dataGridView1.Rows.Add(f.ToArray());
             //}
+        }
+
+        private async void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
